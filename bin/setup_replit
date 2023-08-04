@@ -9,8 +9,9 @@ def system!(*args)
 end
 
 FileUtils.chdir APP_ROOT do
-
-  system! "mv db/development.sqlite3 db/development.sqlite3.bkp"
-  system! "mv db/development.sqlite3.setup db/development.sqlite3"
+  if File.exist?("db/development.sqlite3")
+    system! "rm db/development.sqlite3"
+  end
+  system! "cp db/development.sqlite3.setup db/development.sqlite3"
 
 end
