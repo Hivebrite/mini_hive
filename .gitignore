@@ -1,0 +1,8 @@
+shared_libraries
+node_modules
+dev-repo-destructive-operations
+.DS_Store
+.vscode
+.idea
+package.json
+package-lock.json

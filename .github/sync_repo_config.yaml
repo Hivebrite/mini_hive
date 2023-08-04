@@ -1,0 +1,6 @@
+# excludesPaths prevent the syncing job of `git-template-repository` repository
+# to override files defined in the list.
+# (Internally the exlusion use the rsync exclude rules)
+
+excludesPaths:
+  -

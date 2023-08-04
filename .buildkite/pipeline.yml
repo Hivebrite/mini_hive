@@ -1,0 +1,21 @@
+agents:
+  queue: "ci-docker-small"
+
+steps:
+  - label: ":sparkles: Lint"
+    key: "lint"
+    branches: "!main"
+    command: "make lint-diff"
+
+  - label: ":hammer: Test"
+    key: "test-sync"
+    branches: "!main"
+    depends_on: "lint"
+    command: make init test-sync
+
+  - label: ":python: Sync repositories on organization"
+    branches: "main"
+    depends_on: "lint"
+    env:
+      ENVIRONMENT: production
+    command: "make init sync"
