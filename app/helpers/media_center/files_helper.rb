@@ -1,0 +1,2 @@
+module MediaCenter::FilesHelper
+end

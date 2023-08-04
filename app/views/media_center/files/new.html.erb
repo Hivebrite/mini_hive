@@ -1,0 +1,8 @@
+<div>
+  <%= link_to "<i class='fas fa-arrow-left back-icon'></i> Back to files".html_safe, media_center_files_path, class: "back-link" %>
+</div>
+
+<h1>New file</h1>
+
+<%= render "form", media_center_file: @media_center_file %>
+

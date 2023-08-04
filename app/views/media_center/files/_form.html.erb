@@ -1,0 +1,29 @@
+<div class="form-container">
+  <%= form_with(model: media_center_file) do |form| %>
+    <% if media_center_file.errors.any? %>
+      <div class="error-container">
+        <h2><%= pluralize(media_center_file.errors.count, "error") %> prohibited this media_center_file from being saved:</h2>
+  
+        <ul>
+          <% media_center_file.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div>
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div>
+      <%= form.label :url, style: "display: block" %>
+      <%= form.text_field :url %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

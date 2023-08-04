@@ -1,0 +1,29 @@
+<nav>
+    <%= link_to "Home", "/", class: class_names(active: request.path == "/") %>
+    <%= link_to "News", news_posts_path, class: class_names(active: request.path.match?(/\/news/)) %>
+    <%= link_to "Media Center", media_center_files_path, class: class_names(active: request.path.match?(/\/media_center/)) %>
+    
+
+    <% Cms::Page.all.each do |page| %>
+      <%= link_to page.title, cms_page_path(page), class: class_names(active: request.path == cms_page_path(page)) %>
+    <%end%>
+    
+    <div class="right-links">
+        <% if current_user.connected? %>
+            <% if current_user.admin? %>
+                <%= link_to "CMS", cms_pages_path, class: class_names(active: request.path.match?(/\/cms/)) %>
+                <%= link_to "Onboardings", onboardings_objectives_path, class: class_names(active: request.path.match?(/\/onboardings/)) %>
+            <%end%>
+            <%= link_to sessions_destroy_path do %>
+                <i class="fas fa-circle-xmark"></i> <%= current_user.name %>
+            <%end%>
+        <% else %>
+            <%= link_to sessions_create_path(user_type: :user) do %>
+                <i class='fas fa-user'></i> Log as user
+            <%end%>
+            <%= link_to sessions_create_path(user_type: :admin) do %>
+                <i class='fas fa-user-shield'></i> Log as admin
+            <%end%>
+        <%end%>
+    </div>
+</nav>

@@ -1,0 +1,66 @@
+<%= form_with(model: onboardings_objective) do |form| %>
+  <% if onboardings_objective.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(onboardings_objective.errors.count, "error") %> prohibited this onboardings_objective from being saved:</h2>
+
+      <ul>
+        <% onboardings_objective.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :finished_message, style: "display: block" %>
+    <%= form.text_area :finished_message %>
+  </div>
+
+
+<% end %>
+
+<% if onboardings_objective.persisted? %>
+  <hr/>
+  <h2>Steps</h2>
+  <table>
+    <th>index</th>
+    <th>type</th>
+    <th>title</th>
+    <th>actions</th>
+    <% onboardings_objective.steps.each_with_index do |step, index| %>
+      <tr>
+        <td>
+          step <%= index + 1%>
+        </td>
+        <td>
+          <%= step.resource_type%>
+        </td>
+        <td>
+          <%= step.resource.try(:name) || step.resource.try(:title) || step.resource.try(:subject) %>
+        </td>
+        <td class="btn-group">
+          <%= link_to "edit", edit_onboardings_step_path(step, parent_objective_id: onboardings_objective.id), class: "btn" %>
+          <%= button_to "Delete", step, method: :delete, class: "btn btn--alert" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  
+  <%= link_to "Add step", new_onboardings_step_path(parent_objective_id: onboardings_objective.id), class: "btn" %>
+
+  <hr/>
+<% end %>

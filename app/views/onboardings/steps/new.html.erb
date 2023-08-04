@@ -1,0 +1,10 @@
+<h1>New step</h1>
+
+<%= render "form", onboardings_step: @onboardings_step %>
+
+<br>
+
+<div>
+
+  <%= link_to "Back to Parent Objective", edit_onboardings_objective_path(@onboardings_step.objective) %>
+</div>

@@ -1,0 +1,27 @@
+<%= form_with(model: onboardings_step) do |form| %>
+  <% if onboardings_step.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(onboardings_step.errors.count, "error") %> prohibited this onboardings_step from being saved:</h2>
+
+      <ul>
+        <% onboardings_step.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.hidden_field :objective_id %>
+    <h3>Objective: <%= onboardings_step.objective.name %></h3>
+  </div>
+
+  <div>
+    <%= form.label :resource_global_id, "Resource", style: "display: block" %>
+    <%= form.collection_select :resource_global_id, Cms::Page.all + News::Post.all, :to_global_id, :label_for_step, include_blank: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Steps</h1>
+
+<div id="onboardings_steps">
+  <% @onboardings_steps.each do |onboardings_step| %>
+    <%= render onboardings_step %>
+    <p>
+      <%= link_to "Show this step", onboardings_step %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New step", new_onboardings_step_path %>

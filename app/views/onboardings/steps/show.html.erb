@@ -1,0 +1,10 @@
+
+
+<%= render @onboardings_step %>
+
+<div>
+  <%= link_to "Edit this step", edit_onboardings_step_path(@onboardings_step) %> |
+  <%= link_to "Back to steps", onboardings_steps_path %>
+
+  <%= button_to "Destroy this step", @onboardings_step, method: :delete %>
+</div>

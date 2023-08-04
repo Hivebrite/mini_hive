@@ -1,0 +1,7 @@
+<div>
+  <%= link_to "<i class='fas fa-arrow-left back-icon'></i> Back to posts".html_safe, news_posts_path, class: "back-link" %>
+</div>
+
+<h1>New post</h1>
+
+<%= render "form", news_post: @news_post %>

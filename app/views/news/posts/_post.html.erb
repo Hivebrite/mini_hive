@@ -1,0 +1,11 @@
+<div id="<%= dom_id post %>"  class="post">
+  
+  <h1><%= post.subject %></h1>
+
+  <h3>published on: <%= post.created_at %></h3>
+
+  <div>
+    <%= simple_format post.content %>
+  </div>
+
+</div>

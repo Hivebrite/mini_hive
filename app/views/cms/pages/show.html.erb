@@ -1,0 +1,14 @@
+<% if current_user.admin? %>
+  <div>
+    <%= link_to "<i class='fas fa-arrow-left back-icon'></i> Back to pages".html_safe, cms_pages_path, class: "back-link" %>
+  </div>
+<%end%>
+
+<%= render @cms_page %>
+
+<% if current_user.admin? %>
+  <div class="actions-container">
+    <%= link_to "Edit this page", edit_cms_page_path(@cms_page), class: "post-link" %>
+    <%= button_to "Destroy this page", @cms_page, method: :delete, class: "destroy-btn" %>
+  </div>
+<%end%>

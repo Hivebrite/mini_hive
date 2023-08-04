@@ -1,0 +1,13 @@
+<div id="<%= dom_id step %>">
+  <p>
+    <strong>List:</strong>
+    <%= step.objective_id %>
+  </p>
+
+  <p>
+    <strong>Resource:</strong>
+    (<%= step.resource.class %>)
+    <%= step.resource.try(:name) || step.resource.try(:title) || step.resource.try(:subject) %>
+  </p>
+
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <%= link_to "<i class='fas fa-arrow-left back-icon'></i> Back to files".html_safe, media_center_files_path, class: "back-link" %>
+</div>
+
+<%= render @media_center_file %>
+
+<% if current_user.admin? %>
+  <div class="actions-container">
+    <%= link_to "Edit this file", edit_media_center_file_path(@media_center_file), class: "post-link" %>
+    <%= button_to "Destroy this file", @media_center_file, method: :delete, class: "destroy-btn" %>
+  </div>
+<%end%>

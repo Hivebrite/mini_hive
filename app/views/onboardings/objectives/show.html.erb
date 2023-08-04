@@ -1,0 +1,8 @@
+<%= render @onboardings_objective %>
+
+<div>
+  <%= link_to "Edit this objective", edit_onboardings_objective_path(@onboardings_objective) %> |
+  <%= link_to "Back to objectives", onboardings_objectives_path %>
+
+  <%= button_to "Destroy this objective", @onboardings_objective, method: :delete %>
+</div>

@@ -1,0 +1,22 @@
+<h1>News <%= "\u{1F30E}" %></h1>
+
+<% if current_user.admin? %>
+  <p><%= link_to "New post", new_news_post_path, class: "new-post-link" %></p>
+<%end%>
+  
+<div id="news_posts">
+  <% @news_posts.each do |news_post| %>
+    <div id="<%= dom_id news_post %>" class="post">
+      <%= link_to news_post do%>
+        <h2><%= news_post.subject %></h2>
+      <%end%>
+    
+      <p>
+        <%= news_post.content[0..100] %> ...
+      </p>
+    
+    </div>
+  <% end %>
+</div>
+
+

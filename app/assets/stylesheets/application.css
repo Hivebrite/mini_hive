@@ -1,0 +1,462 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+nav {
+    background-color: #333;
+    padding: 10px;
+  }
+
+  /* Styles for navigation links */
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  nav a.active {
+    background-color: #444;
+  }
+
+  nav a:hover {
+    background-color: #555;
+  }
+
+  /* Styles for the right-aligned links */
+  nav .right-links {
+    float: right;
+  }
+
+  nav .right-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+/* Styles for the notice message */
+.notice {
+  color: green;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Styles for the tables */
+table {
+  width: 100%;
+  margin-block: 20px;
+}
+  th {
+    text-align:left;
+  }
+
+/* Styles for navigation links */
+
+.flash {
+  padding: 15px;
+  border: solid 1px;
+  border-radius: 10px;
+
+}
+  .flash--notice {
+    color: green;
+    background-color: color-mix(in srgb, green 20%, white);
+  }
+
+  .flash--alert, .flash--error {
+    color: red;
+    background-color: color-mix(in srgb, red 20%, white);
+  }
+
+
+/* Styles for the posts container */
+h1 {
+  margin-bottom: 10px;
+}
+
+/* Generic grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+  .grid-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+  }
+  
+  .grid-item a {
+      display: block;
+      text-decoration: none;
+      color: black;
+  }
+
+
+/* Styles for individual posts */
+.post {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Styles for the "Show this post" link */
+.post-link {
+  padding: 5px 10px;
+  background-color: #1e6bb8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+  .post-link:hover {
+    background-color: #0056b3;
+  }
+
+/* Style for the "New post" link */
+.new-post-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: forestgreen;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+  .new-post-link:hover {
+    background-color: green;
+  }
+
+.back-link {
+    display: inline-block;
+    padding: 8px 15px;
+    color: #1e6bb8;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  .back-link:hover {
+    color: #0056b3;
+  }
+
+/* Styles for the arrow icon */
+.back-icon {
+  margin-right: 5px;
+}
+
+/* Styles for the links and button container */
+.actions-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* Style for the "Destroy this post" button */
+.destroy-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #d9534f;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+  .destroy-btn:hover {
+    background-color: #c9302c;
+  }
+
+/* Styles for the form container */
+  .form-container {
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Styles for the error messages */
+  .error-container {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for the form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Styles for the form fields */
+  input[type="text"],
+  textarea, 
+  select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for the submit button */
+  input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #1e6bb8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  /* Styles for the buttons */
+.btn {
+  padding: 8px 15px;
+  background-color: lightgrey;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none; 
+}
+  .btn:hover {
+    background-color: #b5b5b5;
+  }
+
+  .btn--primary {
+    background-color: #1e6bb8;
+    color: white;
+  }
+
+  .btn--primary:hover {
+    background-color: #0056b3;
+  }
+
+  .btn--alert {
+    background-color: #e00000;   
+    color: white;
+  }
+
+  .btn--alert:hover {
+    background-color: #bd0000;
+  }
+
+.btn-group form {
+  display: inline;
+}
+
+
+/* Style for the MC */
+.mc__image--thumbnail {
+  max-width: 100px;
+}
+
+
+/* styles for CMS Pages */
+.cms-page__content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+  .cms-page__content header {
+    text-align: center;
+  }
+
+  .cms-page__content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cms-page__content h1, .cms-page__content h2, .cms-page__content p {
+    color: #333;
+  }
+
+  .cms-page__content h1, .cms-page__content h2 {
+    margin-bottom: 20px;
+  }
+
+  .cms-page__content h2 {
+    margin-top: 40px;
+  }
+
+  .cms-page__content p {
+    line-height: 1.6;
+  }
+
+/* styles for Homepage */
+
+  .homepage__header {
+      text-align: center;
+      padding: 50px 0;
+      background: #1abc9c;
+      color: white;
+  }
+
+  .homepage__header h1 {
+      font-size: 3em;
+  }
+
+  .homepage__header p {
+      font-size: 1.5em;
+  }
+
+  .homepage__content {
+      background: #f0f0f0;
+      padding: 50px 0;
+      text-align: center;
+  }
+
+  .homepage__content h2 {
+      color: #333;
+      margin-bottom: 20px;
+  }
+
+  .homepage__content p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .homepage__content img {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+
+/* styles for breadcrumb */
+
+.breadcrumb__wrapper {
+  margin: 40px 40px;
+}
+
+.breadcrumb__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-width: 480px;
+}
+
+.breadcrumb {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: auto;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  height: 57px;
+  box-shadow: 0 1px 1px black, 0 4px 14px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  background-color: #ddd;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  text-decoration: none;
+  margin: auto;
+  height: 100%;
+  padding-left: 38px;
+  padding-right: 0;
+  color: #666;
+}
+
+.breadcrumb a:first-child {
+  padding-left: 15.2px;
+}
+
+.breadcrumb a:last-child {
+  padding-right: 15.2px;
+}
+
+.breadcrumb a:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 57px;
+  height: 57px;
+  top: 0;
+  right: -28.1481481481px;
+  background-color: #ddd;
+  border-top-right-radius: 5px;
+  transform: scale(0.707) rotate(45deg);
+  box-shadow: 1px -1px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.breadcrumb a:last-child:after {
+  content: none;
+}
+
+.breadcrumb__inner {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  z-index: 2;
+}
+
+.breadcrumb__title {
+  font-weight: bold;
+}
+
+.breadcrumb a.active,
+.breadcrumb a:hover {
+  background: #1abc9c;
+  color: white;
+}
+
+.breadcrumb a.active:after,
+.breadcrumb a:hover:after {
+  background: #1abc9c;
+  color: white;
+}
+
+/* styles for breadcrumb */
+
+.tour_step__content {
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+
+<h1>Files <%= "\u{1F5BC}" %></h1>
+
+<% if current_user.admin? %>
+  <p><%= link_to "New file", new_media_center_file_path, class: "new-post-link" %></p>
+<%end%>
+
+<div class="grid-container">
+    <% @media_center_files.each do |file| %>
+        <div class="grid-item">
+            <%= link_to file do %>
+                <img src="<%= file.url %>" alt="Media Center Image">
+                <div>
+                    <span ><%=file.name%>
+                </div>
+            <%end%>
+        </div>
+    <% end %>
+</div>

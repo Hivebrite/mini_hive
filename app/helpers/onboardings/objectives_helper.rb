@@ -1,0 +1,2 @@
+module Onboardings::ObjectivesHelper
+end

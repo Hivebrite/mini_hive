@@ -1,0 +1,48 @@
+<div class="breadcrumb__wrapper">
+  <div class="breadcrumb__container">
+  	<div class="breadcrumb">
+      
+        <%= link_to onboardings_objective_tour_step_path(@onboardings_objective, :start), class: class_names(active: @current_step_id == :start ) do %>
+  			<span class="breadcrumb__inner">
+  				<span class="breadcrumb__title">Start</span>
+  				<span class="breadcrumb__desc"></span>
+  			</span>
+  		<% end %>
+  
+      <% @onboardings_objective.steps.each_with_index do |step, index| %>
+        <%= link_to onboardings_objective_tour_step_path(@onboardings_objective, step), class: class_names(active: @current_step_id == step.id ) do %>
+              
+  			 <span class="breadcrumb__inner">
+  				  <span class="breadcrumb__title">Step <%= index + 1 %></span>
+  				  <span class="breadcrumb__desc"><%= step.resource.label_for_step(with_class: false) %></span>
+  			 </span>
+  		  <% end %>        
+      <% end %>
+
+      <%= link_to onboardings_objective_tour_step_path(@onboardings_objective, :done), class: class_names(active: @current_step_id == :done ) do %>
+  			<span class="breadcrumb__inner">
+  				<span class="breadcrumb__title">Done</span>
+  				<span class="breadcrumb__desc"></span>
+  			</span>
+  		<% end %>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="tour_step__content">
+  <h1><%= @onboardings_objective.name %></h1>
+  <hr/>
+</div>
+              
+<% if @current_step_id == :start %>
+  <div class="tour_step__content">
+    <h2>Welcome to this onboarding path</h2>
+    <p><%= simple_format @onboardings_objective.description %></p>
+  </div>
+<% elsif @onboardings_step && @onboardings_step.resource.is_a?(Cms::Page) %>
+  <%= render "cms/pages/page", page: @onboardings_step.resource %>
+<% elsif @onboardings_step && @onboardings_step.resource.is_a?(News::Post) %>
+  <%= render "news/posts/post", post: @onboardings_step.resource %>
+<% end %>

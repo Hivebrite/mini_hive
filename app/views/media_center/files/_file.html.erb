@@ -1,0 +1,10 @@
+<div id="<%= dom_id file %>" class="post">
+  
+  <p>
+    <img src="<%= file.url %>" alt="Media Center Image" class="<%= @display_mode.thumbnail? ? 'mc__image--thumbnail' : nil %>">
+  </p>
+  <p>
+    <%= file.name %>
+  </p>
+
+</div>

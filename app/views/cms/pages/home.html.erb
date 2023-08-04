@@ -1,0 +1,39 @@
+<div class="homepage">
+    <div class="homepage__header">
+        <h1>Welcome to Mini Hive!</h1>
+        <p>Your one-stop platform for all things Miniature!</p>
+    </div>
+    
+    <div class="homepage__content">
+        <h2>Let's Get started</h2>
+        <p><b>Try our onboarding paths and let us guide through what Mini Hive can offer you!</b></p>
+        <% Onboardings::Objective.all.each do |objective| %>
+          <h3><b>
+            👉
+            <%= link_to objective.name, onboardings_objective_tour_steps_path(objective) %>
+            👈
+          </b></h3>
+        <% end %>
+        <p>❤️</p>
+        <h2>About Mini Hive</h2>
+        <p>Mini Hive is the ultimate resource for miniature enthusiasts. From intricate models to tiny homes, we cover everything you need to start or enhance your miniature journey. Stay connected with us as we bring the world of miniatures to your fingertips!</p>
+        <svg height="100" width="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg>
+
+
+        <h2>Our Miniature Collections</h2>
+        <p>Explore our vast collections of hand-crafted miniatures - each piece uniquely designed and carefully constructed to bring joy to our community of miniaturists. Join us today and discover the wonderful world of miniatures!</p>
+        <svg height="100" width="100">
+  <polygon points="50,5 95,95 5,95" stroke="black" stroke-width="1" fill="blue"/>
+</svg>
+
+
+        <h2>Join the Mini Hive Community</h2>
+        <p>Be a part of our growing community of miniature enthusiasts! Share your creations, get inspired, and learn from others in the Mini Hive community. Join us today!</p>
+       <svg height="100" width="100">
+  <polygon points="50,5 20,95 95,35 5,35 80,95" stroke="black" stroke-width="1" fill="green"/>
+</svg>
+
+    </div>
+</div>

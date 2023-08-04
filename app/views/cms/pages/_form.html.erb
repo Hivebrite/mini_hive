@@ -1,0 +1,29 @@
+<div class="form-container">
+  <%= form_with(model: cms_page) do |form| %>
+    <% if cms_page.errors.any? %>
+      <div class="error-container">
+        <h2><%= pluralize(cms_page.errors.count, "error") %> prohibited this cms_page from being saved:</h2>
+  
+        <ul>
+          <% cms_page.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div>
+      <%= form.label :content, style: "display: block" %>
+      <%= form.text_area :content %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

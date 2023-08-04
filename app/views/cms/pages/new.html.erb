@@ -1,0 +1,7 @@
+<div>
+  <%= link_to "<i class='fas fa-arrow-left back-icon'></i> Back to pages".html_safe, cms_pages_path, class: "back-link" %>
+</div>
+
+<h1>New page</h1>
+
+<%= render "form", cms_page: @cms_page %>
