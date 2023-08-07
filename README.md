@@ -12,9 +12,13 @@ on replit:
 - rerun project
 - ready to go ✅
 
-## Things to watchout for maintenance
+## Maintenance
+### things to watchout for:
 - Watchout for CPU and memory usage
 - avoid adding gems to the project, especially ones with C dependencies. since it consumes memory, increase boot time, and C compilation is slow, and taxing on the CPU
+### updating [nix](https://github.com/Hivebrite/mini_hive/blob/main/replit.nix) dependencies
+- you can find relevant update or system dependencies at https://search.nixos.org/packages
+- you might need to update to the latest channel in the [.replit](https://github.com/Hivebrite/mini_hive/blob/main/.replit) file 
 
 ## Replit considerations
 
