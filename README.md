@@ -6,10 +6,8 @@ on replit:
 - choose option to "Import from github"
 - copy this repo's url `github.com/Hivebrite/mini_hive`
 - wait for the import to finish
-- click `run` to launch installation of dependencies
-- the project will start and fail because of migrations
 - run this command in the shell tab `bin/setup_replit` to setup the seed DB
-- rerun project
+- click `run` to launch installation of dependencies
 - ready to go ✅
 
 ## Maintenance
