@@ -70,4 +70,5 @@ Rails.application.configure do
 
   # Allow hosting on *.repl.co hosts
   config.hosts << /.*\.repl.co/
+  config.hosts << /.*\.replit.dev/
 end
