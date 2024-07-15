@@ -1,7 +1,8 @@
-run = "bin/rails server --binding=0.0.0.0"
-entrypoint = "app/controllers/application_controller.rb"
+run = "bundle exec rails server --binding=0.0.0.0"
+entrypoint="README.md"
 
 hidden = [".bundle"]
+modules = ["ruby-3.3"]
 
 [env]
 PATH = "/home/runner/${REPL_SLUG}/bin"
@@ -26,3 +27,10 @@ pattern = "**/*.rb"
 
 [languages.ruby.languageServer]
 start = "solargraph stdio"
+
+[deployment]
+run = ["sh", "-c", "bundle exec rails server --binding=0.0.0.0"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
