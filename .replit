@@ -2,7 +2,9 @@ run = "bundle exec rails server --binding=0.0.0.0"
 entrypoint="README.md"
 
 hidden = [".bundle"]
-modules = ["ruby-3.3"]
+modules = ["ruby-3.3", "web", "python-3.12", "nix"]
+# modules = ["ruby-3.3"] # in theory only ruby module should suffice but replit keeps adding web/python/nix modules with the wrong ruby version, which messes up the env
+
 
 [env]
 PATH = "/home/runner/${REPL_SLUG}/bin"
