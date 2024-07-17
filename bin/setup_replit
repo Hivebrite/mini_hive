@@ -15,3 +15,8 @@ FileUtils.chdir APP_ROOT do
   system! "cp db/development.sqlite3.setup db/development.sqlite3"
 
 end
+
+# fix replit downgrading ruby version
+c = File.read(".replit")
+c.gsub!("ruby-3.2", "ruby-3.3")
+File.write(".replit", c)
