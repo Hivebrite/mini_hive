@@ -7,7 +7,9 @@ on replit:
 - copy this repo's url `github.com/Hivebrite/mini_hive`
 - wait for the import to finish
 - run this command in the shell tab `bin/setup_replit` to setup the seed DB
-- click `run` to launch installation of dependencies
+- click `run` to launch installation of dependencies (it will fail because replit is overwriting some config)
+- run again `bin/setup_replit` (to bring back the right config)
+- now `run` again and it'll work fine
 - ready to go ✅
 
 ## Maintenance
