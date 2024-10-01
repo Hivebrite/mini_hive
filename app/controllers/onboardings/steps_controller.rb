@@ -71,6 +71,6 @@ class Onboardings::StepsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def onboardings_step_params
-      params.require(:onboardings_step).permit(:list_id, :objective_id, :resource_global_id, :resource_type)
+      params.require(:onboardings_step).permit(:objective_id, :resource_global_id, :resource_type)
     end
 end
