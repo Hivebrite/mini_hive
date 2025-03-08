@@ -185,7 +185,8 @@ GEM
     regexp_parser (2.8.1)
     reline (0.3.6)
       io-console (~> 0.5)
-    rexml (3.2.5)
+    rexml (3.3.6)
+      strscan
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -199,6 +200,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sqlite3 (1.7.3-x86_64-linux)
+    strscan (3.1.0)
     thor (1.2.2)
     timeout (0.4.1)
     tzinfo (2.0.6)
